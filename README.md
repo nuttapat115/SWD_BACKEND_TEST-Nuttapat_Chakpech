@@ -35,11 +35,12 @@ http://{ip}:{port}/todo/api/task
 ```json
 {
   "title": "Task a",
-  "description":"Do task a", // option
-  "status" : false, // option
-  "due_datetime": "2023-02-13" // option
+  "description":"Do task a", 
+  "status" : false, 
+  "due_datetime": "2023-02-13" 
 }
 ```
+***description, status, due_datetime*** is **optional**
 
  ---
             
@@ -52,12 +53,14 @@ http://{ip}:{port}/todo/api/task
   Body
 ```json
 {
-  "title": "Task a", // option
-  "description":"Do task a", // option
-  "status" : false, // option
-  "due_datetime": "2023-02-13" // option
+  "title": "Task a", 
+  "description":"Do task a", 
+  "status" : false, 
+  "due_datetime": "2023-02-13" 
 }
 ```       
+***title,description, status, due_datetime*** is **optional**
+
   ---
             
 ### **Delet Task**

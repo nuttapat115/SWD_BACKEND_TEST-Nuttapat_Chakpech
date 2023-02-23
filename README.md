@@ -21,50 +21,56 @@
     - สามารเรียกดู task ได้
     - มี Response หากสำเร็จหรือเกิด error
   Herder
+```json
+{"Content-Type" : "application/json"}
+```
+  ---
+###  **Add Task**
 
-    {"Content-Type" : "application/json"}
+  method : POST 
+```
+http://{ip}:{port}/todo/api/task
+```
+  Body
+```json
+{
+  "title": "Task a",
+  "description":"Do task a", // option
+  "status" : false, // option
+  "due_datetime": "2023-02-13" // option
+}
+```
+
+ ---
+            
+### **Edit Task**
+
+  method : PUT 
+
+    http://{ip}:{port}/todo/api/task/{task_id:int}
+
+  Body
+```json
+{
+  "title": "Task a", // option
+  "description":"Do task a", // option
+  "status" : false, // option
+  "due_datetime": "2023-02-13" // option
+}
+```       
+  ---
+            
+### **Delet Task**
+  method : DELET 
   
-  ---
-    # Add Task
-
-    POST http://{ip}:{port}/todo/api/task
-
-      Body
-
-            {
-              "title": "Task a",
-              "description":"Do task a", // option
-              "status" : false, // option
-              "due_datetime": "2023-02-13" // option
-            }
-
+    http://{ip}:{port}/todo/api/task/{task_id:int}
 
   ---
             
-     # Edit Task
+### **Get Task**
+  method : GET
 
-      PUT http://{ip}:{port}/todo/api/task/{task_id:int}
-
-      Body
-
-            {
-              "title": "Task a", // option
-              "description":"Do task a", // option
-              "status" : false, // option
-              "due_datetime": "2023-02-13" // option
-            }
-            
-  ---
-            
-     # Delet Task
-
-      DELET http://{ip}:{port}/todo/api/task/{task_id:int}
-
-  ---
-            
-     # Get Task
-
-      GET http://{ip}:{port}/todo/api/task/{task_id:int}
+    http://{ip}:{port}/todo/api/task/{task_id:int}
       
   ---
  
@@ -76,22 +82,23 @@
     - มี Response หากสำเร็จหรือเกิด error
 
   Herder
-
-    {"Content-Type" : "application/json"}
-  
+```json
+{"Content-Type" : "application/json"}
+```
   ---
-    # Send mail
+### Send mail
+  method : POST 
 
-    POST http://{ip}:{port}/emailsender/
+    http://{ip}:{port}/emailsender/
 
-      Body
-
-            {
-                "send_to": "receiver@mail.com",
-                "subject": "Email Subject",
-                "body": "Email body"
-            }
-
+  Body
+```json
+{
+    "send_to": "receiver@mail.com",
+    "subject": "Email Subject",
+    "body": "Email body"
+}
+```
 
   ---
   

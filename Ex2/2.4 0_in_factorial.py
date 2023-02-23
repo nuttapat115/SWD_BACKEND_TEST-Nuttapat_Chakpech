@@ -1,4 +1,5 @@
 def factorial(num):
+
     if num == 1 : # base
         return 1
     else:
@@ -11,8 +12,10 @@ def count_o_atBack(data):
     count = 0
     for i in data:
         if i == "0":
+            # count
             count += 1
         else:
+            # if end of 0
             break 
     return count
 

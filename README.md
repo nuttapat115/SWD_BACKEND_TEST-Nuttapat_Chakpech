@@ -1,5 +1,12 @@
 # SWD_BACKEND_TEST-Nuttapat_Chakpech
 ---
+## ข้อ 1
+- logical_test.py
+- logical_test_2.py
+- apis/views/schools.py
+
+---
+
 ## ข้อ 2
   - ### 2.1 ให้ทำ todo list โดยใช้ django framework มีใช้หน้า server side หรือapi ก็ได้
     
@@ -109,5 +116,34 @@
         index_now += 1
     
     return index_of_max
+  ```
+   - ### 2.4 เขียนโปรแกรมหาจำนวนเลข 0 ที่อยู่ติดกันหลังสุดของค่า factorial ด้วย Python 
+  **App Location** -> Ex2/2.4 0_in_factorial.py
+
+  ```python
+def factorial(num):
+    if num == 1 : # base
+        return 1
+    else:
+        return num*factorial(num-1)
+    
+def count_o_atBack(data):
+    data = str(data)
+    # invert data
+    data = data[::-1]
+    count = 0
+    for i in data:
+        if i == "0":
+            # count
+            count += 1
+        else:
+            # if end of 0
+            break 
+    return count
+
+def fac_count0(num):
+    fac = factorial(num)
+    count = count_o_atBack(fac)
+    return fac, count
   ```
   

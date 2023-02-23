@@ -19,8 +19,7 @@
     - สามารถแก้ไข task ได้
     - สามารลบ task ได้
     - สามารเรียกดู task ได้
-    - มี Response หากเกิด error และสำเร็จ
-
+    - มี Response หากสำเร็จหรือเกิด error
   Herder
 
     {"Content-Type" : "application/json"}
@@ -74,7 +73,7 @@
       
 **Future**
     - สามารถส่ง email ระบุ email, subject, body
-    - มี Response หากเกิด error และสำเร็จ
+    - มี Response หากสำเร็จหรือเกิด error
 
   Herder
 

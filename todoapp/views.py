@@ -128,4 +128,30 @@ class TaskAPIView(APIView):
         task_checkObj = Task.objects.filter(id=taskId)
         serializer = TaskSerializer(task_checkObj, many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
+    
+    @staticmethod
+    def delete(request, *args, **kwargs):
+        taskId = kwargs.get("id", None)
+        task_checkObj = Task.objects.filter(id=taskId)
+        if len(task_checkObj) == 0:
+            payload = { 
+                "status" : 400,
+                "massage" : "Bad Request: Invalid request payload",
+                "detial" : "Task not found",
+            }
+            return Response(payload,status=status.HTTP_400_BAD_REQUEST)
+        try:
+            task_checkObj.delete()
+        except Exception as e:
+            payload = { 
+                "status" : 500,
+                "massage" : "INTERNAL_SERVER_ERROR",
+                "detial" : "delete failed",
+            }
+            return Response(payload,status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        payload = { 
+                "status" : 200,
+                "massage" : f"Task {taskId} Deleted"
+            }
+        return Response(payload,status=status.HTTP_200_OK)
 
